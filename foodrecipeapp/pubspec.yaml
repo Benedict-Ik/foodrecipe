@@ -57,7 +57,13 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  # Images
+  assets:
+    - ui-assets/img/banner.png
+    - ui-assets/img/bread-and-milk.png
+    - ui-assets/img/eggs.png
+    - ui-assets/img/location.png
+    - ui-assets/img/location.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -86,5 +92,14 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+    # flutter:
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: ui-assets/fonts/poppins/Poppins-Bold.ttf
+        - asset: ui-assets/fonts/poppins/Poppins-Light.ttf
+        - asset: ui-assets/fonts/poppins/Poppins-Medium.ttf
+        - asset: ui-assets/fonts/poppins/Poppins-Regular.ttf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
