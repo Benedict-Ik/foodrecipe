@@ -2,7 +2,7 @@
 
 This project is an assessment of my understanding on how to design UI in Flutter.
 
-#### Output:
+### Output:
 ![alt text](Food-recipe-app-1.png)
 
 ### Challenges encountered:
