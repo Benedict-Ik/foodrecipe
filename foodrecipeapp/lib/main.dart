@@ -13,236 +13,268 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: appTitle,
-
-      // Defining Appbar
       home: Scaffold(
-          appBar: AppBar(
-            leading: Padding(
-              padding: EdgeInsets.all(10.0),
+        appBar: AppBar(
+          leading: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                // Handle the arrow button press
+              },
+            ),
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
               child: IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {
-                  // Handle the arrow button press
-                },
+                icon: Icon(Icons.more_horiz),
+                onPressed: () {},
               ),
             ),
-            actions: [
-              Padding(
-                padding: EdgeInsets.all(10.0),
-                child: IconButton(
-                  icon: Icon(Icons.more_horiz),
-                  onPressed: () {},
-                ),
-              ),
-            ],
-          ),
-          body: Padding(
-            padding: EdgeInsets.only(left: 10.0, right: 10.0),
-
-            // Parent Column
-            child: Column(children: [
-              // Header text description
-              Row(
-                children: [
-                  Text(
-                    "How to make french\ntoast ",
-                    textDirection: TextDirection.ltr,
-                    style: TextStyle(
-                        fontFamily: "Poppins",
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20.0),
+          ],
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 10.0),
+                Text(
+                  "How to make french toast",
+                  style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20.0,
                   ),
-                ],
-              ),
-              // Banner Image
-              // Column(
-              //   children: [
-              //     Stack(
-              //       children: [
-              //         ClipRRect(
-              //           borderRadius: BorderRadius.circular(10.0),
-              //           child: Image.asset(
-              //             "ui-assets/img/banner.png",
-              //             width: double.infinity,
-              //             height: 100.0,
-              //             fit: BoxFit.contain,
-              //           ),
-              //         ),
-              //         Positioned(
-              //           top:
-              //               0, // Adjusted to position the image centrally vertically
-              //           left:
-              //               0, // Adjusted to position the image centrally horizontally
-              //           child: Image.asset(
-              //             "ui-assets/img/play-button.png",
-              //             width: 100.0,
-              //             height: 100.0,
-              //             fit: BoxFit.cover,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ],
-              // ),
-
-              Column(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                      "ui-assets/img/banner.png",
-                      // width: 20.0,
-                      // height: 20.0,
-                      fit: BoxFit.contain,
-                    ),
-                  )
-                ],
-              ),
-
-              // Ratings and reviews
-              Column(children: [
-                Row(
+                ),
+                const SizedBox(height: 10.0),
+                Column(
                   children: [
-                    IconButton(
-                      icon: Icon(
-                        Icons.star,
-                        color: Colors.orange,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image.asset(
+                        "ui-assets/img/banner.png",
+                        fit: BoxFit.contain,
                       ),
-                      onPressed: () {
-                        // Handle the arrow button press
-                      },
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "4,5",
-                          textDirection: TextDirection.ltr,
-                          style: TextStyle(
-                              fontFamily: "Poppins",
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18.0),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.only(left: 5.0)),
-                        Text(
-                          "(300 Reviews)",
-                          textDirection: TextDirection.ltr,
-                          style: TextStyle(
-                              fontFamily: "Poppins",
-                              fontWeight: FontWeight.w200,
-                              fontSize: 15.0),
-                        ),
-                      ],
-                    ),
+                    )
                   ],
                 ),
-              ]),
-
-              // Profile section
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.asset(
-                        "ui-assets/img/profile-img.png",
-                        width: 50.0,
-                        height: 50.0,
-                        // fit: BoxFit.contain,
-                      ),
-                      SizedBox(
-                          width:
-                              10), // Add spacing between the profile image and text
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Roberta Anny",
-                            style: TextStyle(
-                              fontFamily: "Roboto",
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Image.asset(
-                                "ui-assets/img/location.png",
-                                width: 20.0,
-                                height: 20.0,
-                                // fit: BoxFit.contain,
-                              ),
-                              SizedBox(
-                                  width:
-                                      5), // Add spacing between the location icon and text
-                              Text(
-                                "Bali, Indonesia",
-                                style: TextStyle(
-                                  fontSize: 14.0,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Spacer(), // Add spacer to push the follow button to the right
-                      ElevatedButton(
-                        onPressed: () {
-                          // Add functionality for the follow button press
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.red, // Background color
-                          onPrimary: Colors.white, // Text color
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                        ),
-                        child: Text("Follow"),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-
-              // Card section
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 20.0), // Add vertical padding
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                const SizedBox(height: 10.0),
+                Column(
+                  children: [
+                    Row(
                       children: [
-                        Text(
-                          "Ingredients",
+                        IconButton(
+                          icon: Icon(Icons.star, color: Colors.orange),
+                          onPressed: () {
+                            // Handle the arrow button press
+                          },
+                        ),
+                        const Text(
+                          "4.5",
                           style: TextStyle(
                             fontFamily: "Poppins",
                             fontWeight: FontWeight.w700,
                             fontSize: 18.0,
                           ),
                         ),
-                        Text(
-                          "5 items",
+                        const SizedBox(width: 5.0),
+                        const Text(
+                          "(300 Reviews)",
                           style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w200,
+                            fontSize: 15.0,
                             color: Colors.grey,
-                            fontSize: 14.0,
                           ),
                         ),
                       ],
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+                const SizedBox(height: 10.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          "ui-assets/img/profile-img.png",
+                          width: 50.0,
+                          height: 50.0,
+                        ),
+                        const SizedBox(width: 10.0),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Roberta Anny",
+                              style: TextStyle(
+                                fontFamily: "Roboto",
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Image.asset(
+                                  "ui-assets/img/location.png",
+                                  width: 20.0,
+                                  height: 20.0,
+                                ),
+                                const SizedBox(width: 5.0),
+                                Text(
+                                  "Bali, Indonesia",
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Spacer(),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Add functionality for the follow button press
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.red,
+                            onPrimary: Colors.white,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 10),
+                          ),
+                          child: const Text("Follow"),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Ingredients",
+                      style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    const Text(
+                      "5 items",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 14.0,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20.0),
+                Column(
+                  children: [
+                    IngredientSection(
+                      foodImage: "ui-assets/img/bread-and-milk.png",
+                      foodName: "Bread",
+                      foodWeight: "200g",
+                    ),
+                    const SizedBox(height: 15),
+                    IngredientSection(
+                      foodImage: "ui-assets/img/eggs.png",
+                      foodName: "Eggs",
+                      foodWeight: "200g",
+                    ),
+                    const SizedBox(height: 15),
+                    IngredientSection(
+                      foodImage: "ui-assets/img/bread-and-milk.png",
+                      foodName: "Milk",
+                      foodWeight: "200g",
+                    ),
+                    const SizedBox(height: 15),
+                    IngredientSection(
+                      foodImage: "ui-assets/img/bread-and-milk.png",
+                      foodName: "Bread",
+                      foodWeight: "200g",
+                    ),
+                    const SizedBox(height: 15),
+                    IngredientSection(
+                      foodImage: "ui-assets/img/bread-and-milk.png",
+                      foodName: "Eggs",
+                      foodWeight: "200g",
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
-              // Individual Cards
-            ]),
-          )),
+class IngredientSection extends StatelessWidget {
+  final String foodImage;
+  final String foodName;
+  final String foodWeight;
+
+  const IngredientSection({
+    Key? key,
+    required this.foodImage,
+    required this.foodName,
+    required this.foodWeight,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 5.0),
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: const Color(0xFFA9A9A9).withOpacity(0.2),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.transparent, width: 2),
+                    color: Colors.white,
+                  ),
+                  padding: const EdgeInsets.all(9),
+                  child: Image.asset(foodImage, fit: BoxFit.cover),
+                ),
+                const SizedBox(width: 15),
+                Text(
+                  foodName,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              foodWeight,
+              style: const TextStyle(
+                fontWeight: FontWeight.w400,
+                color: Color(0xFFA9A9A9),
+                fontSize: 16,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
