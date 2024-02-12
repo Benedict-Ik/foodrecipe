@@ -16,17 +16,15 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           leading: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(0.0),
             child: IconButton(
               icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                // Handle the arrow button press
-              },
+              onPressed: () {},
             ),
           ),
           actions: [
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(0.0),
               child: IconButton(
                 icon: Icon(Icons.more_horiz),
                 onPressed: () {},
@@ -35,123 +33,112 @@ class MyApp extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 10.0),
                 Text(
-                  "How to make french toast",
+                  "How to make french\ntoast",
                   style: TextStyle(
+                    letterSpacing: 2,
                     fontFamily: "Poppins",
                     fontWeight: FontWeight.w700,
                     fontSize: 20.0,
+                    color: Color(0xff333333),
                   ),
                 ),
                 const SizedBox(height: 10.0),
-                Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0),
-                      child: Image.asset(
-                        "ui-assets/img/banner.png",
-                        fit: BoxFit.contain,
-                      ),
-                    )
-                  ],
+                BannerSection(
+                  bgImg: "ui-assets/img/banner.png",
                 ),
                 const SizedBox(height: 10.0),
-                Column(
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        IconButton(
-                          icon: Icon(Icons.star, color: Colors.orange),
-                          onPressed: () {
-                            // Handle the arrow button press
-                          },
-                        ),
-                        const Text(
-                          "4.5",
-                          style: TextStyle(
-                            fontFamily: "Poppins",
-                            fontWeight: FontWeight.w700,
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        const SizedBox(width: 5.0),
-                        const Text(
-                          "(300 Reviews)",
-                          style: TextStyle(
-                            fontFamily: "Poppins",
-                            fontWeight: FontWeight.w200,
-                            fontSize: 15.0,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
+                    IconButton(
+                      icon: Icon(Icons.star, color: Colors.orange),
+                      onPressed: () {},
+                    ),
+                    const Text(
+                      "4.5",
+                      style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    const SizedBox(width: 7.0),
+                    const Text(
+                      "(300 Reviews)",
+                      style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w200,
+                        fontSize: 15.0,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10.0),
-                Column(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
+                    Image.asset(
+                      "ui-assets/img/profile-img.png",
+                      width: 50.0,
+                      height: 50.0,
+                    ),
+                    const SizedBox(width: 10.0),
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.asset(
-                          "ui-assets/img/profile-img.png",
-                          width: 50.0,
-                          height: 50.0,
+                        Text(
+                          "Roberta Anny",
+                          style: TextStyle(
+                            fontFamily: "Roboto",
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                        const SizedBox(width: 10.0),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Row(
                           children: [
-                            Text(
-                              "Roberta Anny",
-                              style: TextStyle(
-                                fontFamily: "Roboto",
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.w700,
-                              ),
+                            Image.asset(
+                              "ui-assets/img/location.png",
+                              width: 20.0,
+                              height: 20.0,
                             ),
-                            Row(
-                              children: [
-                                Image.asset(
-                                  "ui-assets/img/location.png",
-                                  width: 20.0,
-                                  height: 20.0,
-                                ),
-                                const SizedBox(width: 5.0),
-                                Text(
-                                  "Bali, Indonesia",
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ],
+                            const SizedBox(width: 5.0),
+                            Text(
+                              "Bali, Indonesia",
+                              style: TextStyle(
+                                fontSize: 14.0,
+                                color: Colors.grey,
+                              ),
                             ),
                           ],
                         ),
-                        Spacer(),
+                      ],
+                    ),
+                    Spacer(),
+                    Column(
+                      children: [
+                        Padding(padding: EdgeInsets.only(top: 0.0)),
                         ElevatedButton(
-                          onPressed: () {
-                            // Add functionality for the follow button press
-                          },
+                          onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             primary: Colors.red,
                             onPrimary: Colors.white,
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                           ),
-                          child: const Text("Follow"),
+                          child: const Text(
+                            "Follow",
+                            style: TextStyle(fontSize: 18),
+                          ),
                         ),
                       ],
-                    ),
+                    )
                   ],
                 ),
                 const SizedBox(height: 20.0),
@@ -170,7 +157,7 @@ class MyApp extends StatelessWidget {
                       "5 items",
                       style: TextStyle(
                         color: Colors.grey,
-                        fontSize: 14.0,
+                        fontSize: 18.0,
                       ),
                     ),
                   ],
@@ -178,31 +165,31 @@ class MyApp extends StatelessWidget {
                 const SizedBox(height: 20.0),
                 Column(
                   children: [
-                    IngredientSection(
+                    CardSection(
                       foodImage: "ui-assets/img/bread-and-milk.png",
                       foodName: "Bread",
                       foodWeight: "200g",
                     ),
                     const SizedBox(height: 15),
-                    IngredientSection(
+                    CardSection(
                       foodImage: "ui-assets/img/eggs.png",
                       foodName: "Eggs",
                       foodWeight: "200g",
                     ),
                     const SizedBox(height: 15),
-                    IngredientSection(
+                    CardSection(
                       foodImage: "ui-assets/img/bread-and-milk.png",
                       foodName: "Milk",
                       foodWeight: "200g",
                     ),
                     const SizedBox(height: 15),
-                    IngredientSection(
+                    CardSection(
                       foodImage: "ui-assets/img/bread-and-milk.png",
                       foodName: "Bread",
                       foodWeight: "200g",
                     ),
                     const SizedBox(height: 15),
-                    IngredientSection(
+                    CardSection(
                       foodImage: "ui-assets/img/bread-and-milk.png",
                       foodName: "Eggs",
                       foodWeight: "200g",
@@ -218,12 +205,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class IngredientSection extends StatelessWidget {
+class CardSection extends StatelessWidget {
   final String foodImage;
   final String foodName;
   final String foodWeight;
 
-  const IngredientSection({
+  const CardSection({
     Key? key,
     required this.foodImage,
     required this.foodName,
@@ -233,7 +220,7 @@ class IngredientSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 5.0),
+      padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 5.0),
       child: Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
@@ -275,6 +262,27 @@ class IngredientSection extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class BannerSection extends StatelessWidget {
+  final String bgImg;
+  const BannerSection({super.key, required this.bgImg});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+          child: ClipRRect(
+              borderRadius: BorderRadius.circular(13),
+              child: Image.asset(bgImg)),
+        ),
+        Image.asset("ui-assets/img/play-button.png", fit: BoxFit.contain),
+      ],
     );
   }
 }
